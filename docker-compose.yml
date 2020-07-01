@@ -6,13 +6,6 @@ services:
       build: .
       depends_on: 
         - 'database'
-      environment: 
-        ENV POSTGRES_PORT: 5432 
-        POSTGRES_HOST: database 
-        POSTGRES_USER: postgres 
-        POSTGRES_PASSWORD: password 
-        POSTGRES_DATABASE: postgres 
-        PORT: 3000
       ports: 
         - '3000:3000'
   
@@ -23,8 +16,4 @@ services:
         - POSTGRES_PASSWORD=password
         - POSTGRES_USER=admin
         - POSTGRES_DB=database
-      volumes:
-        - POSTGRES_DATA:/var/lib/postgresql/database
 
-volumes:
-    POSTGRES_DATA:
